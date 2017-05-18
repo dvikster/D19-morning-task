@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+#rotate{
+    margin:50px auto 0;
+    width: 480px;
+    height: 720px;
+}
+input#slider{
+    margin:10px auto 10px;
+    width: 480px;
+    display: block;
+    outline: none;
+}
+
+.button_block{
+    margin:10px auto 50px;
+    width: 480px;
+}
+.button_block button{
+    margin-right: 10px;
+}
