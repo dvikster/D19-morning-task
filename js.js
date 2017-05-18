@@ -99,6 +99,7 @@ document.querySelector('#run').onclick = rotateTimerRun;
 
 function rotateTimerStop() {
     clearTimeout(timer);
+    console.log('yeeee');
 };
 document.querySelector('#stop').onclick = rotateTimerStop;
 
@@ -118,8 +119,10 @@ document.addEventListener('keydown', rotateKey);
 
 // Добавьте возможность листать слайдер с помощью клавиши “пробел”.
 function rotateKeySpase(event) {
+    event.preventDefault();
     if(event.key == ' '){
         moveRight();
+        clearTimeout(timer);
         // rotateTimerStop();
     }
 }
