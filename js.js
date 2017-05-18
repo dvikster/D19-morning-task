@@ -99,7 +99,6 @@ document.querySelector('#run').onclick = rotateTimerRun;
 
 function rotateTimerStop() {
     clearTimeout(timer);
-    console.log('yeeee');
 };
 document.querySelector('#stop').onclick = rotateTimerStop;
 
@@ -122,8 +121,8 @@ function rotateKeySpase(event) {
     event.preventDefault();
     if(event.key == ' '){
         moveRight();
-        clearTimeout(timer);
-        // rotateTimerStop();
+        // clearTimeout(timer);
+        rotateTimerStop();
     }
 }
 document.addEventListener('keydown', rotateKeySpase);
