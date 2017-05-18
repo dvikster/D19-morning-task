@@ -1,15 +1,21 @@
-var preloader = document.getElementById('preloadImg');
-
-
-var blockRotate = document.getElementById('rotate');
-var imgGirl = document.createElement('img');
-imgGirl.className = 'img-girl';
-imgGirl.src = 'images/1.jpg';
-blockRotate.appendChild(imgGirl);
 var i=1;
 var x=0;
 var x1=0;
+var blockRotate = document.getElementById('rotate');
+var imgGirl;
 
+function init(){
+    imgGirl = document.createElement('img');
+    imgGirl.className = 'img-girl';
+    imgGirl.src = 'images/'+i+'.jpg';
+    blockRotate.appendChild(imgGirl);
+}
+init();
+//
+// var imgGirl = document.createElement('img');
+// imgGirl.className = 'img-girl';
+// imgGirl.src = 'images/1.jpg';
+// blockRotate.appendChild(imgGirl);
 
 // смена картинок на ползунок
 var imgRange = document.getElementById('slider');
@@ -51,14 +57,15 @@ function moveLeft() {
 // Если мышь движется вправо – 01-02-03.
 
 function rotateImg() {
-    x = x1;
+
     x1 = event.offsetX;
     if( x > x1){
         moveLeft();
     }
-    if( x < x1){
+    else if( x < x1){
         moveRight();
     }
+    x = x1;
 }
 blockRotate.addEventListener('mousemove', rotateImg);
 
@@ -89,6 +96,7 @@ function rotateTimerRun(){
     timer = setTimeout(rotateTimerRun,200);
 }
 document.querySelector('#run').onclick = rotateTimerRun;
+
 function rotateTimerStop() {
     clearTimeout(timer);
 };
@@ -112,7 +120,7 @@ document.addEventListener('keydown', rotateKey);
 function rotateKeySpase(event) {
     if(event.key == ' '){
         moveRight();
-        rotateTimerStop();
+        // rotateTimerStop();
     }
 }
 document.addEventListener('keydown', rotateKeySpase);

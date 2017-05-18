@@ -1,0 +1,9 @@
+#rotate {
+	width: 480px;
+	height: 720px;
+	margin: 50px;
+	border: 5px solid #c0c0c0;
+}
+.skylark {
+	display: none;
+}
